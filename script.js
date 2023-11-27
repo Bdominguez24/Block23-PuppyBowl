@@ -2,7 +2,7 @@ const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
 
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
-const cohortName = 'YOUR COHORT NAME HERE';
+const cohortName = '2308-FTB-WEB-PT';
 // Use the APIURL variable for fetch requests
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
 
@@ -12,14 +12,24 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
  */
 const fetchAllPlayers = async () => {
     try {
-
+        const response = await fetch(`${APIURL}players`);
+        const result = await response.json();
+        return result;
     } catch (err) {
         console.error('Uh oh, trouble fetching players!', err);
     }
 };
 
+(async () => {
+    const players = await fetchAllPlayers();
+    console.log(players);
+})();
+
 const fetchSinglePlayer = async (playerId) => {
     try {
+        const response = await fetch(`${APIURL}playerId`);
+        const result = await response.json();
+        return result; 
 
     } catch (err) {
         console.error(`Oh no, trouble fetching player #${playerId}!`, err);
@@ -65,9 +75,13 @@ const removePlayer = async (playerId) => {
  * @param playerList - an array of player objects
  * @returns the playerContainerHTML variable.
  */
-const renderAllPlayers = (playerList) => {
+const renderAllPlayers = (players) => {
     try {
-        
+        players.forEach((player) =>{
+            const playerElement = document.createElement('p');
+            playerElement.innerHTML = player.name;
+            playerContainer.appendChild(playerElement);
+        });
     } catch (err) {
         console.error('Uh oh, trouble rendering players!', err);
     }
@@ -86,11 +100,11 @@ const renderNewPlayerForm = () => {
     }
 }
 
-const init = async () => {
-    const players = await fetchAllPlayers();
-    renderAllPlayers(players);
+const init = async () =>{
+    const players = await fetchAllPlayers()
+    console.log(players.data.players)
+    renderAllPlayers(players.data.players)
 
-    renderNewPlayerForm();
 }
 
-init();
+init()
