@@ -1,5 +1,101 @@
-*{
+body {
+  display: flex;
   padding: 0;
+  flex-direction: column;
   margin: 0;
   box-sizing: border-box;
+}
+
+.container {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  background-color: aliceblue;
+  border-radius: 15px;
+  width: 250px;
+  height: 100%;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #333;
+  text-align: center;
+}
+
+.player-card:hover {
+  background-color: #333;
+  color: white;
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+.player-image {
+  border: 3px solid #000;
+  border-radius: 10px;
+  max-width: 95%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.details-button {
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 2px solid black
+}
+
+.remove-button {
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 2px solid black
+}
+
+#player-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+
+}
+
+
+#player-form label{
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+#player-form input{
+ border: 2px solid black;
+}
+
+.add-player{
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 2px solid black;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gray;
+  color: white;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 4px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
 }
