@@ -42,3 +42,9 @@ const init = async () =>{
 }
 
 init()
+
+"click", () => {
+    const playerId = button.getAttribute("data-player-id");
+    const playerInfo = document.querySelector(`player-id[data-player-id = "${playerId}"]`);
+});
+});

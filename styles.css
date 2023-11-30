@@ -4,6 +4,10 @@ body {
   flex-direction: column;
   margin: 0;
   box-sizing: border-box;
+  background-image: url("https://muralsyourway.vtexassets.com/arquivos/ids/240981/Football-Stadium-Wallpaper-Mural.jpg?v=638164439006100000");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Bebas Neue', sans-serif;;
 }
 
 .container {
@@ -58,6 +62,7 @@ body {
   padding: 20px;
   border: 2px solid black;
   border-radius: 15px;
+  color: aliceblue;
 
 }
 
@@ -65,7 +70,7 @@ body {
 #player-form label{
   display: block;
   margin-bottom: 2px;
-  font-weight: bold;
+  font-size: 25px;
 }
 
 #player-form input{
@@ -87,15 +92,15 @@ button:hover {
 }
 
 h2 {
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 3em;
   margin: 4px;
   text-align: center;
+  color: aliceblue;
 }
 
 h1 {
-  font-size: 4em;
-  font-weight: bold;
+  font-size: 10em;
   margin: 10px;
   text-align: center;
+  color: aliceblue;
 }
